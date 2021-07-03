@@ -10,7 +10,7 @@
                     </div>
                     <div class="post-content">
                         <header class="entry-header text-center text-uppercase">
-                            <h6><a href="#"><?=$article->category->title?></a></h6>
+                            <h6><a href="<?=Url::toRoute(['site/category', 'id'=>$article->category->id])?>"><?=$article->category->title?></a></h6>
 
                             <h1 class="entry-title"><a href="blog.html"><?=$article->title?></a></h1>
 
@@ -162,7 +162,7 @@
                         <ul>
                             <?foreach ($categories as $category):?>
                             <li>
-                                <a href="#"><?= $category->title?></a>
+                                <a href="<?=Url::toRoute(['site/category', 'id'=>$category->id])?>"><?= $category->title?></a>
                                 <span class="post-count pull-right"> (<?=$category->getArticles()->count()?>)</span>
                             </li>
                             <?endforeach;?>
