@@ -139,37 +139,9 @@
                     </form>
                 </div><!--end leave comment-->
             </div>
-            <div class="col-md-4" data-sticky_column>
-                <div class="primary-sidebar">
-                    <aside class="widget">
-                        <h3 class="widget-title text-uppercase text-center">Популярные статьи</h3>
-                        <div class="popular-post">
-                            <? foreach ($popular as $pop):?>
-                            <a href="#" class="popular-img"><img src="<?=$pop->getImage()?>" alt="">
-
-                                <div class="p-overlay"></div>
-                            </a>
-
-                            <div class="p-content">
-                                <a href="#" class="text-uppercase"><?=$pop->title?></a>
-                                <span class="p-date"><?=$pop->date?></span>
-                            </div>
-                            <? endforeach;?>
-                        </div>
-                    </aside>
-                    <aside class="widget border pos-padding">
-                        <h3 class="widget-title text-uppercase text-center">Категории</h3>
-                        <ul>
-                            <?foreach ($categories as $category):?>
-                            <li>
-                                <a href="<?=Url::toRoute(['site/category', 'id'=>$category->id])?>"><?= $category->title?></a>
-                                <span class="post-count pull-right"> (<?=$category->getArticles()->count()?>)</span>
-                            </li>
-                            <?endforeach;?>
-                        </ul>
-                    </aside>
-                </div>
-            </div>
+        <?=$this->render('/partials/sidebar',[  'popular'=>$popular,
+            'recent'=>$recent,
+            'categories'=>$categories])?>
         </div>
     </div>
 </div>

@@ -135,9 +135,15 @@ class SiteController extends Controller
     public function actionCategory($id)
     {
        $data = Category::getArticlesByCategory($id);
+        $popular = Article::getPopular();
+        $recent = Article::getRecent();
+        $categories = Category::getAllCategories();
         return $this->render('category',[
             'articles'=>$data['articles'],
-            'pages'=>$data['pages']
+            'pages'=>$data['pages'],
+            'popular'=>$popular,
+            'recent'=>$recent,
+            'categories'=>$categories
         ]);
     }
 }
