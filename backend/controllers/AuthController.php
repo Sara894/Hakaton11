@@ -3,9 +3,10 @@
 
 namespace backend\controllers;
 
-
+use Yii;
 use common\models\LoginForm;
 use yii\web\Controller;
+use backend\models\User;
 
 class AuthController extends Controller
 {
@@ -29,6 +30,7 @@ class AuthController extends Controller
         }
     }
 
+
     /**
      * Logout action.
      *
@@ -39,6 +41,25 @@ class AuthController extends Controller
         Yii::$app->user->logout();
 
         return $this->goHome();
+    }
+
+    public function actionTest()
+    {
+        $user = User::findOne(1);
+        Yii::$app->user->login($user);
+       //var_dump( Yii::$app->user);die;
+    }
+    public static function findIdentity()
+    {
+
+    }
+    public static function findIdentityByAccessToken()
+    {
+
+    }
+    public static function getId()
+    {
+
     }
 
 }

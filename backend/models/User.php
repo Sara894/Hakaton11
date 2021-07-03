@@ -3,6 +3,7 @@
 namespace backend\models;
 
 use Yii;
+use  yii\web\IdentityInterface;
 
 /**
  * This is the model class for table "user".
@@ -20,7 +21,7 @@ use Yii;
  *
  * @property Comment[] $comments
  */
-class User extends \yii\db\ActiveRecord
+class User extends \yii\db\ActiveRecord implements  IdentityInterface
 {
     /**
      * {@inheritdoc}
