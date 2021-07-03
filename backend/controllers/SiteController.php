@@ -132,8 +132,12 @@ class SiteController extends Controller
         'previousArticle'=>$previousArticle, 'nextArticle'=>$nextArticle, 'data'=>$data] );
     }
 
-    public function actionCategory()
+    public function actionCategory($id)
     {
-        return $this->render('category');
+       $data = Category::getArticlesByCategory($id);
+        return $this->render('category',[
+            'articles'=>$data['articles'],
+            'pages'=>$data['pages']
+        ]);
     }
 }
