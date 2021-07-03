@@ -1,3 +1,6 @@
+<?
+use yii\helpers\Url;
+?>
 <div class="col-md-4" data-sticky_column>
     <div class="primary-sidebar">
 
@@ -7,13 +10,13 @@
                 <div class="popular-post">
 
 
-                    <a href="#" class="popular-img"><img src="<?=$post->getImage()?>" alt="">
+                    <a href="<?= Url::toRoute(['site/view', 'id'=>$post->id])?>" class="popular-img"><img src="<?=$post->getImage()?>" alt="">
 
                         <div class="p-overlay"></div>
                     </a>
 
                     <div class="p-content">
-                        <a href="#" class="text-uppercase"><?=$post->title?></a>
+                        <a href="<?= Url::toRoute(['site/view', 'id'=>$post->id])?>" class="text-uppercase"><?=$post->title?></a>
                         <span class="p-date"><?=$post->date?></span>
 
                     </div>
@@ -29,12 +32,12 @@
                 <div class="thumb-latest-posts">
                     <div class="media">
                         <div class="media-left">
-                            <a href="#" class="popular-img"><img src="<?=$new->getImage()?>" alt="">
+                            <a href="<?= Url::toRoute(['site/view', 'id'=>$new->id])?>" class="popular-img"><img src="<?=$new->getImage()?>" alt="">
                                 <div class="p-overlay"></div>
                             </a>
                         </div>
                         <div class="p-content">
-                            <a href="#" class="text-uppercase"><?=$new->title?></a>
+                            <a href="<?= Url::toRoute(['site/view', 'id'=>$new->id])?>" class="text-uppercase"><?=$new->title?></a>
                             <span class="p-date"><?=$new->date?></span>
                         </div>
                     </div>
@@ -49,7 +52,7 @@
             <ul>
                 <? foreach ($categories as $category):?>
                     <li>
-                        <a href="#"><?=$category->title?></a>
+                        <a href="<?= Url::toRoute(['site/view', 'id'=>$category->id])?>"><?=$category->title?></a>
                         <span class="post-count pull-right">(<?=$category->getArticles()->count();?>)</span>
                     </li>
                 <? endforeach;?>
