@@ -71,7 +71,6 @@ class SiteController extends Controller
         $popular = Article::getPopular();
         $recent = Article::getRecent();
         $categories = Category::getAllCategories();
-//уборка лапшекода
         return $this->render('index', [
             'articles' => $data['articles'],
             'pages' => $data['pages'],
@@ -120,8 +119,9 @@ class SiteController extends Controller
         return $this->goHome();
     }
 
-    public function actionView()
+    public function actionView($id)
     {
+        var_dump($id); die;
         return $this->render('single');
     }
 

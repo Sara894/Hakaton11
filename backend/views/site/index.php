@@ -1,6 +1,7 @@
 <?php
 // display pagination
 use yii\widgets\LinkPager;
+use yii\helpers\Url;
 
 /* @var $this yii\web\View */
 
@@ -13,9 +14,9 @@ $this->title = 'Главная страница';
                 <?php foreach ($articles as $article):?>
                     <article class="post">
                         <div class="post-thumb">
-                            <a href="view"><img src="<?=$article->getImage();?>" alt=""></a>
+                            <a href="<?= Url::toRoute(['site/view', 'id'=>$article->id])?>"><img src="<?=$article->getImage();?>" alt=""></a>
 
-                            <a href="view" class="post-thumb-overlay text-center">
+                            <a href="<?= Url::toRoute(['site/view', 'id'=>$article->id])?>" class="post-thumb-overlay text-center">
                                 <div class="text-uppercase text-center">View Post</div>
                             </a>
                         </div>
