@@ -49,17 +49,6 @@ class AuthController extends Controller
         Yii::$app->user->login($user);
        //var_dump( Yii::$app->user);die;
     }
-    public static function findIdentity()
-    {
 
-    }
-    public static function findIdentityByAccessToken()
-    {
-
-    }
-    public static function getId()
-    {
-
-    }
 
 }
