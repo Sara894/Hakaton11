@@ -83,7 +83,7 @@
                     </div>  <div class="items">
                     <?foreach ($data as $onePost):?>
                         <div class="single-item">
-                            <a href="#">
+                            <a href="<?= Url::toRoute(['site/view', 'id'=>$onePost->id])?>">
                                 <img src="<?=$onePost->getImage()?>" alt="">
 
                                 <p><?=$onePost->title?></p>
@@ -100,18 +100,15 @@
                     </div>
 
                     <div class="comment-text">
-                        <a href="#" class="replay btn pull-right"> Replay</a>
-                        <h5>Rubel Miah</h5>
+                        <a href="#" class="replay btn pull-right"> Ответить</a>
+                        <h5>Иван Иванов</h5>
 
                         <p class="comment-date">
-                            December, 02, 2015 at 5:57 PM
+                            Декабрь, 02, 2022 в 5:57 утра
                         </p>
 
 
-                        <p class="para">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                            diam nonumy
-                            eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
-                            voluptua. At vero eos et cusam et justo duo dolores et ea rebum.</p>
+                        <p class="para">Норм</p>
                     </div>
                 </div>
                 <!-- end bottom comment-->
