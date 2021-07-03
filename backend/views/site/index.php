@@ -33,7 +33,7 @@ $this->title = 'Главная страница';
                                 </p>
 
                                 <div class="btn-continue-reading text-center text-uppercase">
-                                    <a href="view" class="more-link">Продолжить чтение</a>
+                                    <a href="<?= Url::toRoute(['site/view', 'id'=>$article->id])?>" class="more-link">Продолжить чтение</a>
                                 </div>
                             </div>
                             <div class="social-share">

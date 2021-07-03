@@ -121,8 +121,15 @@ class SiteController extends Controller
 
     public function actionView($id)
     {
-        var_dump($id); die;
-        return $this->render('single');
+        $data = Article::find()->all();
+        $popular = Article::getPopular();
+        $recent = Article::getRecent();
+        $article = Article::findOne($id);
+        $categories = Category::getAllCategories();
+        $previousArticle = ($id !=1 ) ? Article::findOne($id-1) : Article::findOne(5);
+        $nextArticle =($id!=5) ? (Article::findOne($id+1)): (Article::findOne(1));
+        return $this->render('single',['article'=>$article, 'categories'=>$categories, 'popular'=>$popular, 'recent'=>$recent,
+        'previousArticle'=>$previousArticle, 'nextArticle'=>$nextArticle, 'data'=>$data] );
     }
 
     public function actionCategory()
