@@ -91,25 +91,23 @@ PublicAsset::register($this);
             <div class="col-md-4">
                 <aside class="footer-widget">
                     <div class="about-img"><img src="/backend/web/public/images/logo.png" alt=""></div>
-                    <div class="about-content">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-                        eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed voluptua. At vero eos et
-                        accusam et justo duo dlores et ea rebum magna text ar koto din.
+                    <div class="about-content">Пилотный проект Хакатона Оренбуржья
                     </div>
                     <div class="address">
-                        <h4 class="text-uppercase">contact Info</h4>
+                        <h4 class="text-uppercase">Контактная информация</h4>
 
-                        <p> 14529/12 NK Streets, DC, KZ</p>
+                        <p> проспект Победы, 13</p>
 
-                        <p> Phone: +123 456 78900</p>
+                        <p> Телефон: 89534569344</p>
 
-                        <p>mytreasure.com</p>
+                        <p>archiveOren.ru</p>
                     </div>
                 </aside>
             </div>
 
             <div class="col-md-4">
                 <aside class="footer-widget">
-                    <h3 class="widget-title text-uppercase">Testimonials</h3>
+                    <h3 class="widget-title text-uppercase">Отзывы</h3>
 
                     <div id="myCarousel" class="carousel slide" data-ride="carousel">
                         <!--Indicator-->
@@ -122,18 +120,15 @@ PublicAsset::register($this);
                             <div class="item active">
                                 <div class="single-review">
                                     <div class="review-text">
-                                        <p>Lorem ipsum dolor sit amet, conssadipscing elitr, sed diam nonumy eirmod
-                                            tempvidunt ut labore et dolore magna aliquyam erat,sed diam voluptua. At
-                                            vero eos et accusam justo duo dolores et ea rebum.gubergren no sea takimata
-                                            magna aliquyam eratma</p>
+                                        <p>Старейший театр города — Оренбургский областной драматический театр имени М. Горького. Впервые спектакли в городском театре Оренбурга начали идти в 1869 году, до этого в городе выступали лишь заезжие труппы. На сцене театра в разные годы выступали Полина Стрепетова, Вера Комиссаржевская, Михаил Тарханов. В 1898 году, одновременно с МХТ, на сцене театра была поставлена чеховская «Чайка».</p>
                                     </div>
                                     <div class="author-id">
                                         <img src="/backend/web/public/images/author.png" alt="">
 
                                         <div class="author-text">
-                                            <h4>Sophia</h4>
+                                            <h4>Это интересно!</h4>
 
-                                            <h4>CEO, ReadyTheme</h4>
+                                            <h4>Об Оренбурге</h4>
                                         </div>
                                     </div>
                                 </div>
@@ -141,18 +136,15 @@ PublicAsset::register($this);
                             <div class="item">
                                 <div class="single-review">
                                     <div class="review-text">
-                                        <p>Lorem ipsum dolor sit amet, conssadipscing elitr, sed diam nonumy eirmod
-                                            tempvidunt ut labore et dolore magna aliquyam erat,sed diam voluptua. At
-                                            vero eos et accusam justo duo dolores et ea rebum.gubergren no sea takimata
-                                            magna aliquyam eratma</p>
+                                        <p>Оренбургский муниципальный театр кукол «Пьеро» — самый молодой театр Оренбурга. Основан в 1991 году. Каждые два года театр проводит международный театральный фестиваль «Оренбургский арбузник».</p>
                                     </div>
                                     <div class="author-id">
                                         <img src="/backend/web/public/images/author.png" alt="">
 
                                         <div class="author-text">
-                                            <h4>Sophia</h4>
+                                            <h4>Это интересно!</h4>
 
-                                            <h4>CEO, ReadyTheme</h4>
+                                            <h4>Об Оренбурге</h4>
                                         </div>
                                     </div>
                                 </div>
@@ -160,18 +152,18 @@ PublicAsset::register($this);
                             <div class="item">
                                 <div class="single-review">
                                     <div class="review-text">
-                                        <p>Lorem ipsum dolor sit amet, conssadipscing elitr, sed diam nonumy eirmod
-                                            tempvidunt ut labore et dolore magna aliquyam erat,sed diam voluptua. At
-                                            vero eos et accusam justo duo dolores et ea rebum.gubergren no sea takimata
-                                            magna aliquyam eratma</p>
+                                        <p>В городе действует 30 библиотек, в том числе:
+
+                                            Оренбургская областная универсальная научная библиотека имени Н. К. Крупской (ООУНБ им. Н.К.Крупской)
+                                            Библиотека имени А.П.Чехова</p>
                                     </div>
                                     <div class="author-id">
                                         <img src="/backend/web/public/images/author.png" alt="">
 
                                         <div class="author-text">
-                                            <h4>Sophia</h4>
+                                            <h4>Это интересно!</h4>
 
-                                            <h4>CEO, ReadyTheme</h4>
+                                            <h4>Об Оренбурге</h4>
                                         </div>
                                     </div>
                                 </div>
@@ -183,16 +175,16 @@ PublicAsset::register($this);
             </div>
             <div class="col-md-4">
                 <aside class="footer-widget">
-                    <h3 class="widget-title text-uppercase">Custom Category Post</h3>
+                    <h3 class="widget-title text-uppercase">Просто надо видеть</h3>
 
 
                     <div class="custom-post">
                         <div>
-                            <a href="#"><img src="/backend/web/public/images/footer-img.png" alt=""></a>
+                            <a href="#"><img src="/backend/web/uploads/6158711cb0657876531dd16e2ff1fdf2.jpg" alt=""></a>
                         </div>
                         <div>
-                            <a href="#" class="text-uppercase">Home is peaceful Place</a>
-                            <span class="p-date">February 15, 2016</span>
+                            <a href="#" class="text-uppercase">Поселок Луна, Оренбуржье</a>
+                            <span class="p-date">Лето 2021</span>
                         </div>
                     </div>
                 </aside>
