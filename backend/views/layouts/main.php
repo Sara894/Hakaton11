@@ -38,7 +38,7 @@ PublicAsset::register($this);
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html"><img src="/backend/web/public/images/logo.png" alt=""></a>
+                <a class="navbar-brand" href="index.html"><img src="<?= Url::toRoute(['site/index'])?>" alt=""></a>
             </div>
 
 

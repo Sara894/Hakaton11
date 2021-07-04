@@ -7,12 +7,17 @@
 use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
 
-$this->title = 'Login';
+
+$this->title = 'Вход';
 ?>
-<div class="site-login">
+<div class="leave-comment mr0"><!--leave comment-->
+    <div class="row">
+        <img src="/backend/web/public/images/logo.png" alt="">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="site-login">
     <h1><?= Html::encode($this->title) ?></h1>
 
-    <p>Please fill out the following fields to login:</p>
+    <p>Пожалуйста, заполните поля, чтобы войти как пользователь:</p>
 
             <?php $form = ActiveForm::begin(['id' => 'login-form']); ?>
 
@@ -27,4 +32,7 @@ $this->title = 'Login';
                 </div>
 
             <?php ActiveForm::end(); ?>
+</div>
+</div>
+</div>
 </div>
