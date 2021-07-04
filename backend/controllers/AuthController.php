@@ -7,6 +7,7 @@ use Yii;
 use common\models\LoginForm;
 use yii\web\Controller;
 use backend\models\User;
+use backend\models\SignupForm;
 
 class AuthController extends Controller
 {
@@ -61,7 +62,24 @@ class AuthController extends Controller
 
     public function actionSignup()
     {
+        $model = new User();
 
+        if (Yii::$app->request->isPost)
+        {
+            $model->load(Yii::$app->request->post());
+            $pass_hash = (Yii::$app->getSecurity()->generatePasswordHash($model->password_hash));
+            $model->password_hash =$pass_hash;
+           // var_dump( $model->password_hash);die;
+
+            if(  $model->load(Yii::$app->request->post()));
+            {
+                $model->save(false);
+                return $this->redirect(['auth/login']);
+            }
+
+        }
+
+        return $this->render('signup',['model'=>$model]);
     }
 
 }

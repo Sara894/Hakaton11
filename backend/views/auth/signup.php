@@ -8,7 +8,7 @@ use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
 
 
-$this->title = 'Вход';
+$this->title = 'Регистрация';
 ?>
 <div class="leave-comment mr0"><!--leave comment-->
     <div class="row">
@@ -22,12 +22,13 @@ $this->title = 'Вход';
                 <?php $form = ActiveForm::begin(['id' => 'signup-form']); ?>
 
                 <?= $form->field($model, 'username')->textInput(['autofocus' => true]) ?>
+                <?= $form->field($model, 'email')->textInput(['autofocus' => true]) ?>
 
                 <?= $form->field($model, 'password')->passwordInput() ?>
 
 
                 <div class="form-group">
-                    <?= Html::submitButton('Login', ['class' => 'btn btn-primary btn-block', 'name' => 'login-button']) ?>
+                    <?= Html::submitButton('Зарегестрироваться', ['class' => 'btn btn-primary btn-block', 'name' => 'signup-button']) ?>
                 </div>
 
                 <?php ActiveForm::end(); ?>
