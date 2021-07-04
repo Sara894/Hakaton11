@@ -45,6 +45,10 @@ class SiteController extends Controller
                     'logout' => ['post'],
                 ],
             ],
+            'statistics' => [
+                'class' => \Klisl\Statistics\AddStatistics::class,
+                'actions' => ['index','view'],
+            ],
         ];
     }
 
