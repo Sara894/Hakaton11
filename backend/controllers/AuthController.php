@@ -24,7 +24,7 @@ class AuthController extends Controller
         } else {
             $model->password = '';
 
-            return $this->render('login', [
+            return $this->render('/site/login', [
                 'model' => $model,
             ]);
         }
@@ -45,9 +45,17 @@ class AuthController extends Controller
 
     public function actionTest()
     {
-        $user = User::findOne(1);
-        Yii::$app->user->login($user);
-       //var_dump( Yii::$app->user);die;
+        $user = User::findOne(2);
+     //   var_dump($user);die;
+        Yii::$app->user->logout();
+       if ( Yii::$app->user->isGuest)
+       {
+           echo "пользователь гость";
+       }
+       else
+       {
+           echo "Пользователь авторизован";
+       }
     }
 
 

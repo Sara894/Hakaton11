@@ -21,7 +21,7 @@ use  yii\web\IdentityInterface;
  *
  * @property Comment[] $comments
  */
-class User extends \yii\db\ActiveRecord implements  IdentityInterface
+class User extends \yii\db\ActiveRecord implements IdentityInterface
 {
     /**
      * {@inheritdoc}
@@ -88,4 +88,25 @@ class User extends \yii\db\ActiveRecord implements  IdentityInterface
     {
         return $this->id;
     }
+
+    public function getAuthKey()
+    {
+        return $this->auth_key;
+    }
+    public function validateAuthKey($authKey)
+    {
+        return $this->getAuthKey() === $authKey;
+    }
+
+    public static function FindByUsername($username)
+    {
+        return User::find()->where(['username'=>$username])->one();
+    }
+
+    public function validatePassword($password)
+    {
+       return ($this->password == $password) ? (true) : (false);
+    }
+
+
 }
