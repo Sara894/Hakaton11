@@ -3,21 +3,22 @@
 
 namespace backend\controllers;
 
-use Yii;
-use common\models\LoginForm;
-use yii\web\Controller;
 use backend\models\User;
-use backend\models\SignupForm;
+use Yii;
+use yii\base\Controller;
+use common\models\LoginForm;
+
 
 class AuthController extends Controller
 {
+
     public function actionLogin()
     {
         if (!Yii::$app->user->isGuest) {
             return $this->goHome();
         }
 
-        $this->layout = 'blank';
+        $this->layout = 'main';
 
         $model = new LoginForm();
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
@@ -47,39 +48,26 @@ class AuthController extends Controller
     public function actionTest()
     {
         $user = User::findOne(2);
-     //   var_dump($user);die;
+        //   var_dump($user);die;
         Yii::$app->user->logout();
-       if ( Yii::$app->user->isGuest)
-       {
-           echo "пользователь гость";
-       }
-       else
-       {
-           echo "Пользователь авторизован";
-       }
+        if (Yii::$app->user->isGuest) {
+            echo "пользователь гость";
+        } else {
+            echo "Пользователь авторизован";
+        }
     }
 
 
     public function actionSignup()
     {
-        $model = new User();
-
-        if (Yii::$app->request->isPost)
-        {
-            $model->load(Yii::$app->request->post());
-            $pass_hash = (Yii::$app->getSecurity()->generatePasswordHash($model->password_hash));
-            $model->password_hash =$pass_hash;
-           // var_dump( $model->password_hash);die;
-
-            if(  $model->load(Yii::$app->request->post()));
-            {
-                $model->save(false);
-                return $this->redirect(['auth/login']);
-            }
-
+        $model = new \backend\models\SignupForm();
+        if ($model->load(Yii::$app->request->post()) && $model->signup()) {
+            Yii::$app->session->setFlash('success', 'Thank you for registration. Please check your inbox for verification email.');
+            return $this->goHome();
         }
 
-        return $this->render('signup',['model'=>$model]);
+        return $this->render('signup', [
+            'model' => $model,
+        ]);
     }
-
 }
