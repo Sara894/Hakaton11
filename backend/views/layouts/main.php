@@ -9,7 +9,6 @@ use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use yii\helpers\Url;
-use common\widgets\Alert;
 
 PublicAsset::register($this);
 ?>
@@ -42,12 +41,16 @@ PublicAsset::register($this);
             </div>
 
 
+
+
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
                 <ul class="nav navbar-nav text-uppercase">
-                    <li><a data-toggle="dropdown" class="dropdown-toggle" href="<?= Url::toRoute(['site/index'])?>">На главную</a>
-
+                    <li><a  href="<?= Url::toRoute(['site/index'])?>">На главную</a>
                     </li>
+                    <li><a  href="<?= Url::toRoute(['article/index'])?>">Статьи</a> </li>
+                    <li><a  href="<?= Url::toRoute(['count/index'])?>">Посетители</a> </li>
+                    <li><a  href="<?= Url::toRoute(['tag/index'])?>">Теги</a> </li>
                 </ul>
                 <div class="i_con">
                     <ul class="nav navbar-nav text-uppercase">
