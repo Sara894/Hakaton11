@@ -71,6 +71,10 @@ class SiteController extends Controller
         $popular = Article::getPopular();
         $recent = Article::getRecent();
         $categories = Category::getAllCategories();
+        $this->attachBehavior('statistics', [
+            'class' => \Klisl\Statistics\AddStatistics::class,
+            'actions' => [$this->action->id]
+        ]);
         return $this->render('index', [
             'articles' => $data['articles'],
             'pages' => $data['pages'],
