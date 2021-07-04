@@ -19,7 +19,7 @@ $this->params['breadcrumbs'][] = $this->title;
         <?= Html::a('Create Article', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
+    <?php  echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
@@ -32,14 +32,14 @@ $this->params['breadcrumbs'][] = $this->title;
             'description:ntext',
             'content:ntext',
             'date',
-            [
+           /* [
                     'format'=>'html',
                     'label'=>'Image',
                     'value'=>function(Article $data)
                     {
                         return Html::img($data->getImage(),['width'=>200, 'height'=>180]);
                     }
-],
+],*/
             //'viewed',
             //'user_id',
             //'status',

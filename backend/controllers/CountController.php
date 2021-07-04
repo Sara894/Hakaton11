@@ -37,10 +37,16 @@ class CountController extends Controller
     {
         $searchModel = new CountSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        $usersCount = Count::find()->count();
+        $usersUnique = Count::find()->select(['ip'], 'DISTINCT')->all();
+        $usersUniqueCount = count($usersUnique);
+
 
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
+            'usersCount'=>$usersCount,
+            'usersUniqueCount'=>$usersUniqueCount
         ]);
     }
 
@@ -124,4 +130,11 @@ class CountController extends Controller
 
         throw new NotFoundHttpException('The requested page does not exist.');
     }
+
+    public function actionGetUsers()
+    {
+        $users = Count::find()->count();
+
+    }
+
 }

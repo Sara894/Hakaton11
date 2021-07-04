@@ -138,6 +138,10 @@ class SiteController extends Controller
         $max = Article::find()->count();
         $previousArticle = ($id !=1 ) ? Article::findOne($id-1) : Article::findOne($max);
         $nextArticle =($id!=$max) ? (Article::findOne($id+1)): (Article::findOne(1));
+        $this->attachBehavior('statistics', [
+            'class' => \Klisl\Statistics\AddStatistics::class,
+            'actions' => [$this->action->id]
+        ]);
         return $this->render('single',['article'=>$article, 'categories'=>$categories, 'popular'=>$popular, 'recent'=>$recent,
         'previousArticle'=>$previousArticle, 'nextArticle'=>$nextArticle, 'data'=>$data] );
     }

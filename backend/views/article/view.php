@@ -44,7 +44,7 @@ $this->params['breadcrumbs'][] = $this->title;
             [
                 'format'=>'html',
                 'label'=>'Category ID',
-                'value'=>$model->category->title
+                'value'=> $model->category->title
 
             ],
 

@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel backend\models\CountSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Counts';
+$this->title = 'Счетчик посетителей';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="count-index">
@@ -18,8 +18,12 @@ $this->params['breadcrumbs'][] = $this->title;
         <?= Html::a('Create Count', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
+    <?php  echo $this->render('_search', ['model' => $searchModel]); ?>
+<div>
+    <h2>За все время архив посетили: <?=$usersCount?> раза</h2>
+    <h2>За все время архив посетили уникальных пользователей: <?=$usersUniqueCount?></h2>
 
+</div>
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
