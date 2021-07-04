@@ -45,19 +45,19 @@ PublicAsset::register($this);
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
                 <ul class="nav navbar-nav text-uppercase">
-                    <li><a data-toggle="dropdown" class="dropdown-toggle" href="index.html">Home</a>
+                    <li><a data-toggle="dropdown" class="dropdown-toggle" href="<?= Url::toRoute(['site/index'])?>">На главную</a>
 
                     </li>
                 </ul>
                 <div class="i_con">
                     <ul class="nav navbar-nav text-uppercase">
                         <?php if(Yii::$app->user->isGuest):?>
-                            <li><a href="<?= Url::toRoute(['auth/login'])?>">Login</a></li>
-                            <li><a href="<?= Url::toRoute(['auth/signup'])?>">Register</a></li>
+                            <li><a href="<?= Url::toRoute(['auth/login'])?>">Войти</a></li>
+                            <li><a href="<?= Url::toRoute(['auth/signup'])?>">Зарегестрироваться</a></li>
                         <?php else: ?>
                             <?= Html::beginForm(['/auth/logout'], 'post')
                             . Html::submitButton(
-                                'Logout (' . Yii::$app->user->identity->username . ')',
+                                'Выйти (' . Yii::$app->user->identity->username . ')',
                                 ['class' => 'btn btn-link logout', 'style'=>"padding-top:10px;"]
                             )
                             . Html::endForm() ?>
